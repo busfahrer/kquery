@@ -1,10 +1,10 @@
 
-const M = {
+let M = {
   // createNode
   c: function(html, attrs){
       let template = document.createElement("template");
       template.innerHTML = html;
-      const el = template.content.firstElementChild;
+      let el = template.content.firstElementChild;
       if (attrs) {
         Object.keys(attrs).forEach(key => el.setAttribute(key, attrs[key]));
       }
@@ -26,7 +26,7 @@ const M = {
 
   // multiQuery
   m: function(query) {
-    const results = document.querySelectorAll(query);
+    let results = document.querySelectorAll(query);
     results.forEach(el => this.p(el));
     return results;
   },
@@ -49,5 +49,5 @@ const M = {
   },
 };
 
-const $ = M.q.bind(M);
-const $$ = M.m.bind(M);
+let $ = M.q.bind(M);
+let $$ = M.m.bind(M);
