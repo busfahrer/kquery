@@ -16,7 +16,10 @@ let articles = $$('.article'); // double $$ matches all
 let hr = $('<hr>'); // creates a node from markup
 
 let a = $('<a>click</a>').attr("href", "http://google.com") // sets attributes
-let a = $('<a>click</a>').css("color", "green")             // sets style
+let b = $('<a>click</a>').css("color", "green")             // sets style
+let c = $('<a>click</a>')                                   // or just use chaining
+  .attr("href", "http://google.com")
+  .css("color", "green");
 ```
 
 ## Copy and paste version
