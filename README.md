@@ -1,5 +1,5 @@
 
-# kquery.js
+# kquery
 
 > Nanoscopic jquery clone with only the bare necessities
 
@@ -21,10 +21,11 @@ let a = $('<a>click</a>').css("color", "green")             // sets style
 
 ## Copy and paste version
 ```js
-let M={c:function(t,e){let n=document.createElement("template");n.innerHTML=t;let r=n.content.firstElementChild;
-return e&&Object.keys(e).forEach((t=>r.setAttribute(t,e[t]))),r},p:function(t){t.css=t.css||((e,n)=>(t.style[e]=
-n,t)),t.attr=t.attr||((e,n)=>("object"==typeof e?Object.keys(e).forEach((n=>t.setAttribute(n,e[n]))):
-t.setAttribute(e,n),t))},m:function(t){let e=document.querySelectorAll(t);return e.forEach((t=>this.p(t))),e},
-q:function(t,e){let n;return n=t instanceof HTMLElement?t:t.trim().startsWith("<")?this.c(t,e):
+let M={c:function(t,e){let n=document.createElement("template");n.innerHTML=t;let r=n.content
+.firstElementChild;return e&&Object.keys(e).forEach((t=>r.setAttribute(t,e[t]))),r},p:function
+(t){t.css=t.css||((e,n)=>(t.style[e]=n,t)),t.attr=t.attr||((e,n)=>("object"==typeof e?Object
+.keys(e).forEach((n=>t.setAttribute(n,e[n]))):t.setAttribute(e,n),t))},m:function(t){let e=
+document.querySelectorAll(t);return e.forEach((t=>this.p(t))),e},q:function(t,e){let n;
+return n=t instanceof HTMLElement?t:t.trim().startsWith("<")?this.c(t,e):
 document.querySelector(t),this.p(n),n}},$=M.q.bind(M),$$=M.m.bind(M);
 ```
