@@ -1,0 +1,10 @@
+{
+  "name": "kquery",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Your Name <you@example.com>",
+  "license": "MIT",
+  "scripts": {
+    "build": "npx -y terser -c -m --ecma 5 kquery.js > kquery.min.js"
+  }
+}

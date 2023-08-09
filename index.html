@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>FOO</title>
+  <!-- <script src="./frontend.js" type="text/javascript"></script> -->
+  <script src="./kquery.js" type="text/javascript"></script>
+</head>
+<body>
+  This is Foo
+  
+  <div id="root"></div>
+  
+  <script>
+    console.log("inline");
+    const root = $$("#root");
+    root.forEach(item => {
+      console.log("item is", item);
+      item.append($('<b>bold!</b>'));
+    });
+    const root2 = $("#root");
+    const italic = $('<i>italic!</i>');
+    console.log("italic is", italic);
+    root2.append(italic);
+    // const a = h("a", null, "foo");
+    const a = $('<a>foo</a>', { href: "http://gamestar.de" }).css("color", "fuchsia");
+    const a2 = $('<a>bar</a>', { href: "http://ix.de" }).css("color", "red");
+    // a.href = "http://www.google.com";
+    root2.append(a);
+    root2.append(a2);
+    const results = $$('a');
+    console.log({results});
+    results[0].css("color", "green");
+    // a.href = "http://www.ix.de";
+    // a.attr("href", "http://www.pcgames.de").css("color", "green");
+    // const root = document.getElementById("root");
+    // root.innerHTML = '';
+    // root.append(h("a", { href: "http://ix.de:" }, "ix.de"));
+    // root.append(h("hr"));
+    // const b = h("b", { style: { color: "red" } }, h("i", null, "inner"))
+    // // b.style.color = "red";
+    // root.append(b);
+    // root.append(h("hr"));
+    // root.append(h("b", null, [
+    //     h("i", null, "inner2"),
+    //     "just text",
+    //   ]));
+
+    // root.append(h("button", { onmouseover: () => console.log("HOVER") }, "hover me"));
+    // root.append(h("span", { style: { color: "green"} }, "green text"));
+  </script>
+</body>
+</html>
