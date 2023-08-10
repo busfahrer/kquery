@@ -13,12 +13,29 @@ let M = {
 
   // monkeyPatch
   p: function(el) {
-    el.css = el.css || ((key, val) => { el.style[key] = val; return el; });
+    el.css = el.css || ((key, val) => {
+      if (val) {
+        el.style[key] = val;
+        return el;
+      } else {
+        return el.style[key];
+      }
+    });
     el.attr = el.attr || ((x, y) => {
       if (typeof x === 'object') {
         Object.keys(x).forEach(key => el.setAttribute(key, x[key]));
-      } else {
+      } else if (y) {
         el.setAttribute(x, y);
+      } else {
+        return el.getAttribute(x);
+      };
+      return el;
+    });
+    el.content = el.content || (x => {
+      if (x) {
+        el.textContent = x;
+      } else {
+        return el.textContent;
       };
       return el;
     });
