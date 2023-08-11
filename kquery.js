@@ -39,6 +39,10 @@ let M = {
       };
       return el;
     });
+    el.on = el.on || ((x, y) => {
+      el.addEventListener(x, y);
+      return el;
+    });
   },
 
   // multiQuery
