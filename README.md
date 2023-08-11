@@ -9,10 +9,12 @@
 
 ## Usage Examples
 ```js
-let article  = $('.article');  // single $ matches first
-let articles = $$('.article'); // double $$ matches all
+let article  = $('.article');  // single $ matches first (returns single element)
+let articles = $$('.article'); // double $$ matches all (returns list)
 
 let hr = $('<hr>'); // creates a node from markup
+
+let btn = $('<button>click</button>').on("click" => console.log("click")); // handles events
 
 let a = $('<a>click</a>').content("new text!");             // sets text content
 let b = $('<a>click</a>').attr("href", "http://google.com") // sets attributes
