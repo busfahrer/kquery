@@ -20,8 +20,8 @@ let a = $('<a>click</a>').content("new text!");             // sets text content
 let b = $('<a>click</a>').attr("href", "http://google.com") // sets attributes
 let c = $('<a>click</a>').css("color", "green")             // sets style
 let d = $('<a>click</a>')                                   // or just use chaining
-  .attr("href", "http://google.com")
-  .css("color", "green");
+          .attr("href", "http://google.com")
+          .css("color", "green");
 
 let content = a.content(); // all of the above setters work as getters when
                            // called without arguments
